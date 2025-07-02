@@ -7,7 +7,7 @@ on:
 jobs:
 
   compile:
-    runs-on: ubuntu-latest
+    runs-on: gcp-runner
     steps:
       - uses: actions/checkout@v4
       - name: setup JDK 17
@@ -22,7 +22,7 @@ jobs:
       #   run: mvn -B package --file pom.xml
 
   security-checks:
-    runs-on: ubuntu-latest
+    runs-on: gcp-runner
     needs: compile
     steps:
       - uses: actions/checkout@v4
