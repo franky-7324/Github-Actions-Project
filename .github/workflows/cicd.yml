@@ -65,9 +65,10 @@ jobs:
           cache: maven
       - name: Unit Test case
         run: mvn test
+
   build_project_sonar_scan:
     runs-on: self-hosted
-    needs: security-checks
+    needs: test
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
